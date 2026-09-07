@@ -221,6 +221,8 @@
   .ingredient .num{font-size:11px;font-weight:800;letter-spacing:.14em;color:var(--accent);font-style:italic}
   .ingredient .nm{font-size:clamp(15px,1.7vw,18px);font-weight:900;letter-spacing:-.01em;margin-top:10px;line-height:1.22}
   .ingredient .ds{font-size:11px;color:var(--ink-dim);letter-spacing:.05em;margin-top:8px}
+  .ingredient .thumb{display:block;width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:2px;
+    margin-bottom:12px;background:var(--paper-2);cursor:zoom-in}
   @media (max-width:820px){ .mat-ingredients{grid-template-columns:repeat(2,1fr)} }
 
   @media (max-width:820px){
@@ -317,10 +319,10 @@
       <div class="eyebrow">Materials</div>
       <h2>素材のすべて。</h2>
       <div class="mat-ingredients">
-        <div class="ingredient"><div class="num">01</div><div class="nm"><span class="wu">セラミック</span><span class="wu">パウダー</span></div><div class="ds">微粉末セラミック</div></div>
-        <div class="ingredient"><div class="num">02</div><div class="nm">トルマリン</div><div class="ds">天然鉱石</div></div>
-        <div class="ingredient"><div class="num">03</div><div class="nm">ゲルマニウム</div><div class="ds">半導体元素</div></div>
-        <div class="ingredient"><div class="num">04</div><div class="nm"><span class="wu">テラヘルツ</span><span class="wu">鉱石</span></div><div class="ds">シリカ結晶</div></div>
+        <div class="ingredient"><img class="thumb" src="assets/mat-ceramic.jpg" alt="セラミックパウダー" loading="lazy"><div class="num">01</div><div class="nm"><span class="wu">セラミック</span><span class="wu">パウダー</span></div><div class="ds">微粉末セラミック</div></div>
+        <div class="ingredient"><img class="thumb" src="assets/mat-tourmaline.jpg" alt="トルマリン" loading="lazy"><div class="num">02</div><div class="nm">トルマリン</div><div class="ds">天然鉱石</div></div>
+        <div class="ingredient"><img class="thumb" src="assets/mat-germanium.jpg" alt="ゲルマニウム" loading="lazy"><div class="num">03</div><div class="nm">ゲルマニウム</div><div class="ds">半導体元素</div></div>
+        <div class="ingredient"><img class="thumb" src="assets/mat-terahertz.jpg" alt="テラヘルツ鉱石" loading="lazy"><div class="num">04</div><div class="nm"><span class="wu">テラヘルツ</span><span class="wu">鉱石</span></div><div class="ds">シリカ結晶</div></div>
       </div>
       <ul class="spec-list">
         <li><span class="k">Band</span><span class="v">シリコン ／ 上記4素材を練り込み</span></li>
@@ -434,7 +436,7 @@
     lbImg.removeAttribute('src');
   }
   document.addEventListener('click', function(e){
-    var img = e.target.closest ? e.target.closest('.shot img') : null;
+    var img = e.target.closest ? e.target.closest('.shot img, .ingredient .thumb') : null;
     if(img){ e.preventDefault(); openLb(img.currentSrc || img.src, img.alt); }
   });
   lb.addEventListener('click', closeLb);
