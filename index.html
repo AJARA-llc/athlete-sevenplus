@@ -233,6 +233,9 @@
     font-size:clamp(14px,2vw,17px);letter-spacing:.04em;padding:18px 16px;border-radius:4px;margin:4px 0 32px}
   .mat-detail{display:grid;gap:clamp(22px,3vw,34px)}
   .mat-detail .spec-list{max-width:640px}
+  .mat-guide{display:block;width:100%;max-width:780px;margin:26px auto 0;border-radius:8px;cursor:zoom-in}
+  .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;
+    clip:rect(0 0 0 0);white-space:nowrap;border:0}
   @media (max-width:720px){
     .mat-ingredients{grid-template-columns:1fr}
     .mat-detail{grid-template-columns:1fr}
@@ -339,44 +342,11 @@
   <div class="wrap">
     <div class="eyebrow">Materials</div>
     <h2>素材のすべて。</h2>
-    <p class="mat-intro">電磁波対策だけじゃない。4つの機能性素材を、一本に。</p>
-
-    <div class="mat-ingredients">
-      <div class="ingredient">
-        <img class="thumb" src="assets/mat-ceramic.jpg" alt="セラミックパウダー" loading="lazy">
-        <div class="ing-body">
-          <div class="num">01</div>
-          <div class="nm">セラミックパウダー</div>
-          <div class="sub">電磁環境への配慮を支える“基礎素材”</div>
-        </div>
-      </div>
-      <div class="ingredient">
-        <img class="thumb" src="assets/mat-tourmaline.jpg" alt="トルマリン" loading="lazy">
-        <div class="ing-body">
-          <div class="num">02</div>
-          <div class="nm">トルマリン</div>
-          <div class="sub">電気的特性に着目した天然鉱石</div>
-        </div>
-      </div>
-      <div class="ingredient">
-        <img class="thumb" src="assets/mat-germanium.jpg" alt="ゲルマニウム" loading="lazy">
-        <div class="ing-body">
-          <div class="num">03</div>
-          <div class="nm">ゲルマニウム</div>
-          <div class="sub">電子材料として知られる半導体元素</div>
-        </div>
-      </div>
-      <div class="ingredient">
-        <img class="thumb" src="assets/mat-terahertz.jpg" alt="テラヘルツ鉱石" loading="lazy">
-        <div class="ing-body">
-          <div class="num">04</div>
-          <div class="nm">テラヘルツ鉱石</div>
-          <div class="sub">高周波領域との関連で注目される素材</div>
-        </div>
-      </div>
+    <img class="mat-guide" src="assets/materials-guide.jpg" width="900" height="1200" loading="lazy"
+      alt="電磁波対策だけじゃない。4つの機能性素材（セラミックパウダー・トルマリン・ゲルマニウム・テラヘルツ鉱石）で毎日のコンディションをサポート。">
+    <div class="sr-only">
+      <p>4つの機能性素材を使用。セラミックパウダー：電磁環境への配慮を支える基礎素材。トルマリン：電気的特性に着目した天然鉱石。ゲルマニウム：電子材料として知られる半導体元素。テラヘルツ鉱石：高周波領域との関連で注目される素材。複合素材の力で、毎日の「電磁環境」をサポート。</p>
     </div>
-
-    <div class="mat-support">複合素材の力で、毎日の「電磁環境」をサポート。</div>
 
     <div class="mat-detail">
       <div class="shot" style="aspect-ratio:16/9">
@@ -500,7 +470,7 @@
     lbImg.removeAttribute('src');
   }
   document.addEventListener('click', function(e){
-    var img = e.target.closest ? e.target.closest('.shot img, .ingredient .thumb') : null;
+    var img = e.target.closest ? e.target.closest('.shot img, .ingredient .thumb, .mat-guide') : null;
     if(img){ e.preventDefault(); openLb(img.currentSrc || img.src, img.alt); }
   });
   lb.addEventListener('click', closeLb);
