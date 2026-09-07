@@ -231,7 +231,8 @@
   .ing-points li::before{content:"✓";position:absolute;left:0;top:0;color:var(--accent);font-weight:900}
   .mat-support{text-align:center;background:var(--coal);color:var(--onCoal);font-weight:800;
     font-size:clamp(14px,2vw,17px);letter-spacing:.04em;padding:18px 16px;border-radius:4px;margin:4px 0 32px}
-  .mat-detail{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(24px,4vw,48px);align-items:center}
+  .mat-detail{display:grid;gap:clamp(22px,3vw,34px)}
+  .mat-detail .spec-list{max-width:640px}
   @media (max-width:720px){
     .mat-ingredients{grid-template-columns:1fr}
     .mat-detail{grid-template-columns:1fr}
@@ -378,7 +379,7 @@
     <div class="mat-support">複合素材の力で、毎日の「電磁環境」をサポート。</div>
 
     <div class="mat-detail">
-      <div class="shot" style="aspect-ratio:16/10">
+      <div class="shot" style="aspect-ratio:16/9">
         <img src="assets/detail-macro.png" alt="SEVENPLUS チャーム刻印とバンド質感のマクロ" loading="lazy">
       </div>
       <ul class="spec-list">
